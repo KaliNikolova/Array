@@ -8,30 +8,35 @@ public class Problem8 {
 		int n = input.nextInt();
 		int[] arr = new int[n];
 		for (int i = 0; i < arr.length; i++) {
+			System.out.println(i + ": ");
 			arr[i] = input.nextInt();
 		}
-		int ravniChisla = -1;
+		input.close();
+
+		boolean isTrion = true;
 		int broi = 0;
+		int min = arr[0];
+		int max = arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
+			} else if (arr[i] < min) {
+				min = arr[i];
+			}
+		}
 		for (int i = 0; i < arr.length; i++) {
-			broi = 0;
-			for (int k = i ; k < arr.length; k++) {
+			broi = 1;
+			for (int k = i + 1; k < arr.length; k++) {
 				if (arr[i] == arr[k]) {
 					broi++;
 				}
 			}
-			if (broi > (n + 1) / 2) {
-				ravniChisla += 3;
-			}
-			if (broi == (n + 1) / 2 && n % 2 == 1 && arr[0] != arr[1] && arr[n - 1] != arr[n - 2]) {
-				ravniChisla += 3;
+			if (broi > (n + 1) / 2 || (broi == (n + 1) / 2 && n % 2 == 1 && min != arr[i] && max != arr[i])) {
+				isTrion = false;
+				break;
 			}
 		}
-		if (ravniChisla <= 0) {
-			System.out.println("trion e");
-		} else {
-			System.out.println("ne e trion");
-		}
-
+		System.out.println((isTrion ? "" : "ne ") + "e trion");
 	}
 
 }
