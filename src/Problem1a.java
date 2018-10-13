@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Problem1a {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args){
+	
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
 		int[] array = new int[n];
