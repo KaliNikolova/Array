@@ -5,10 +5,11 @@ public class Problem8 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
+		System.out.print("Vyvedete goleminata na masiva: ");
 		int n = input.nextInt();
 		int[] arr = new int[n];
 		for (int i = 0; i < arr.length; i++) {
-			System.out.println(i + ": ");
+			System.out.print("a[" + i + "] = ");
 			arr[i] = input.nextInt();
 		}
 		input.close();
@@ -36,7 +37,7 @@ public class Problem8 {
 				break;
 			}
 		}
-		System.out.println((isTrion ? "" : "ne ") + "e trion");
+		System.out.println((isTrion ? "" : "ne ") + "moje da se podredi kato trion");
 	}
 
 }
